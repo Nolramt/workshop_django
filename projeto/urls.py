@@ -17,8 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from api import views
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cep/', views.consultar_cep),
-    
+    path('soma/', views.fazer_soma),
+    path('', views.pagina)
 ]

@@ -12,3 +12,15 @@ def consultar_cep(request):
     dados = resposta.json()
 
     return JsonResponse(dados)
+def pagina(request):
+    return render(request,"home.html")
+def fazer_soma(request):
+    resu = None
+
+    if request.method == 'POST':
+        num1 = int(request.POST['num1'])
+        num2 = int(request.POST['num2'])
+
+        resu = num1 + num2
+
+    return render(request, 'home.html', {'resu': resu})
